@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>PET B1 Preliminary Practice | Hoàn Cầu</title>
+  <meta name="description" content="Hệ thống luyện thi Cambridge B1 Preliminary (PET) - Reading & Listening practice tests." />
+  <style>
+    :root{
+      --blue:#0b5ed7;
+      --blue2:#2563eb;
+      --navy:#0f2a55;
+      --cyan:#eaf4ff;
+      --green:#16a34a;
+      --orange:#f59e0b;
+      --text:#172033;
+      --muted:#667085;
+      --line:#dbe4f0;
+      --bg:#f5f8fc;
+      --white:#fff;
+      --shadow:0 12px 34px rgba(15,42,85,.10);
+    }
+    *{box-sizing:border-box}
+    html{scroll-behavior:smooth}
+    body{
+      margin:0;
+      font-family:Inter,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",Arial,sans-serif;
+      background:
+        radial-gradient(circle at 15% 0%, #e7f2ff 0, transparent 28%),
+        radial-gradient(circle at 100% 10%, #eef8ff 0, transparent 25%),
+        var(--bg);
+      color:var(--text);
+    }
+    .wrap{max-width:1180px;margin:auto;padding:0 22px}
+    header{
+      background:linear-gradient(135deg,#0b4fb3 0%,#0c6fe8 58%,#38a3ff 100%);
+      color:#fff;
+      padding:58px 0 46px;
+      position:relative;
+      overflow:hidden;
+    }
+    header:after{
+      content:"";
+      position:absolute;
+      width:320px;height:320px;border-radius:50%;
+      border:50px solid rgba(255,255,255,.08);
+      right:-80px;top:-130px;
+    }
+    .brand{
+      display:inline-flex;align-items:center;gap:10px;
+      font-weight:800;letter-spacing:.4px;
+      background:rgba(255,255,255,.14);
+      border:1px solid rgba(255,255,255,.24);
+      padding:8px 13px;border-radius:999px;
+      backdrop-filter:blur(6px);
+    }
+    h1{font-size:clamp(32px,5vw,56px);line-height:1.06;margin:18px 0 12px;max-width:900px}
+    header p{font-size:clamp(17px,2vw,21px);line-height:1.6;margin:0;max-width:780px;color:#edf6ff}
+    .tips{
+      margin-top:26px;
+      display:flex;flex-wrap:wrap;gap:10px;
+    }
+    .tip{
+      background:rgba(255,255,255,.13);
+      border:1px solid rgba(255,255,255,.22);
+      padding:8px 12px;border-radius:10px;font-weight:650;font-size:14px;
+    }
+    main{padding:38px 0 58px}
+    .section-title{
+      display:flex;align-items:end;justify-content:space-between;gap:18px;
+      margin:10px 0 18px;
+    }
+    .section-title h2{margin:0;color:var(--navy);font-size:27px}
+    .section-title p{margin:5px 0 0;color:var(--muted)}
+    .book{
+      background:var(--white);border:1px solid var(--line);
+      border-radius:22px;box-shadow:var(--shadow);
+      padding:24px;margin-bottom:28px;
+    }
+    .book-head{
+      display:flex;align-items:center;justify-content:space-between;gap:16px;
+      padding-bottom:18px;border-bottom:1px solid var(--line);
+    }
+    .book-title{display:flex;align-items:center;gap:14px}
+    .icon{
+      width:52px;height:52px;border-radius:15px;
+      display:grid;place-items:center;font-size:26px;
+      background:linear-gradient(145deg,#e9f4ff,#d9ebff);
+      border:1px solid #cfe3fa;
+    }
+    .book h3{margin:0;color:var(--navy);font-size:22px}
+    .book-sub{margin-top:5px;color:var(--muted);font-size:14px}
+    .badge{
+      font-size:13px;font-weight:800;color:#14532d;background:#dcfce7;
+      padding:7px 10px;border-radius:999px;white-space:nowrap;
+    }
+    .skills{display:grid;grid-template-columns:1fr 1fr;gap:22px;margin-top:22px}
+    .skill{
+      border:1px solid var(--line);border-radius:18px;padding:19px;background:#fbfdff;
+    }
+    .skill h4{
+      display:flex;align-items:center;gap:8px;
+      margin:0 0 14px;color:var(--navy);font-size:19px;
+    }
+    .grid{
+      display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:11px;
+    }
+    a.test{
+      display:flex;align-items:center;justify-content:space-between;gap:12px;
+      text-decoration:none;color:var(--text);
+      background:#fff;border:1px solid #dce5f1;
+      padding:14px 15px;border-radius:13px;font-weight:750;
+      transition:.18s ease;
+    }
+    a.test:hover{
+      transform:translateY(-2px);border-color:#91bdf5;
+      box-shadow:0 8px 20px rgba(37,99,235,.11);
+      color:var(--blue);
+    }
+    .arrow{
+      width:30px;height:30px;border-radius:9px;display:grid;place-items:center;
+      background:#eff6ff;color:var(--blue);font-size:17px;flex:none;
+    }
+    .empty{
+      color:var(--muted);font-size:14px;background:#f8fafc;border:1px dashed #cbd5e1;
+      border-radius:12px;padding:14px;line-height:1.5;
+    }
+    .note{
+      margin-top:28px;background:#fff7e8;border:1px solid #f7d999;
+      border-radius:16px;padding:16px 18px;color:#6b4b00;line-height:1.6;
+    }
+    footer{
+      text-align:center;color:var(--muted);padding:0 20px 38px;font-size:14px;
+    }
+    @media(max-width:760px){
+      header{padding:42px 0 34px}
+      .skills{grid-template-columns:1fr}
+      .grid{grid-template-columns:1fr}
+      .book{padding:17px;border-radius:18px}
+      .book-head{align-items:flex-start}
+      .badge{display:none}
+      .section-title{display:block}
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="wrap">
+      <div class="brand">🎓 HOÀN CẦU · CAMBRIDGE ENGLISH</div>
+      <h1>PET B1 Preliminary Practice</h1>
+      <p>Chọn bộ đề, kỹ năng và bài test để bắt đầu luyện tập. Học sinh có thể mở trực tiếp trên điện thoại, máy tính bảng hoặc máy tính.</p>
+      <div class="tips">
+        <div class="tip">📖 Reading Practice</div>
+        <div class="tip">🎧 Listening Practice</div>
+        <div class="tip">✅ Làm bài trực tuyến</div>
+      </div>
+    </div>
+  </header>
+
+  <main class="wrap">
+    <div class="section-title">
+      <div>
+        <h2>Kho bài luyện PET</h2>
+        <p>Nhấn vào bài muốn làm để mở đề.</p>
+      </div>
+    </div>
+
+    <section class="book">
+      <div class="book-head">
+        <div class="book-title">
+          <div class="icon">📘</div>
+          <div>
+            <h3>Collins B1 Preliminary</h3>
+            <div class="book-sub">Reading & Listening · 4 Practice Tests</div>
+          </div>
+        </div>
+        <div class="badge">8 bài luyện</div>
+      </div>
+
+      <div class="skills">
+        <div class="skill">
+          <h4>📖 Reading</h4>
+          <div class="grid">
+            <a class="test" href="COLLINS-V2/READING_TEST_1.html"><span>Reading Test 1</span><span class="arrow">→</span></a>
+            <a class="test" href="COLLINS-V2/READING_TEST_2.html"><span>Reading Test 2</span><span class="arrow">→</span></a>
+            <a class="test" href="COLLINS-V2/READING_TEST_3.html"><span>Reading Test 3</span><span class="arrow">→</span></a>
+            <a class="test" href="COLLINS-V2/READING_TEST_4.html"><span>Reading Test 4</span><span class="arrow">→</span></a>
+          </div>
+        </div>
+
+        <div class="skill">
+          <h4>🎧 Listening</h4>
+          <div class="grid">
+            <a class="test" href="COLLINS-V2/LISTENING_TEST_1.html"><span>Listening Test 1</span><span class="arrow">→</span></a>
+            <a class="test" href="COLLINS-V2/LISTENING_TEST_2.html"><span>Listening Test 2</span><span class="arrow">→</span></a>
+            <a class="test" href="COLLINS-V2/LISTENING_TEST_3.html"><span>Listening Test 3</span><span class="arrow">→</span></a>
+            <a class="test" href="COLLINS-V2/LISTENING_TEST_4.html"><span>Listening Test 4</span><span class="arrow">→</span></a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="book">
+      <div class="book-head">
+        <div class="book-title">
+          <div class="icon">🏛️</div>
+          <div>
+            <h3>Cambridge B1 Preliminary 1 – Authentic Practice Tests</h3>
+            <div class="book-sub">Authentic Reading Practice · 4 Tests</div>
+          </div>
+        </div>
+        <div class="badge">4 bài luyện</div>
+      </div>
+
+      <div class="skills">
+        <div class="skill">
+          <h4>📖 Reading</h4>
+          <div class="grid">
+            <a class="test" href="PET-B1-Preliminary-1-Authentic-Practice-Tests/PET_READING_TEST_1.html"><span>Reading Test 1</span><span class="arrow">→</span></a>
+            <a class="test" href="PET-B1-Preliminary-1-Authentic-Practice-Tests/PET_READING_TEST_2.html"><span>Reading Test 2</span><span class="arrow">→</span></a>
+            <a class="test" href="PET-B1-Preliminary-1-Authentic-Practice-Tests/PET_READING_TEST_3.html"><span>Reading Test 3</span><span class="arrow">→</span></a>
+            <a class="test" href="PET-B1-Preliminary-1-Authentic-Practice-Tests/PET_READING_TEST_4.html"><span>Reading Test 4</span><span class="arrow">→</span></a>
+          </div>
+        </div>
+
+        <div class="skill">
+          <h4>🎧 Listening</h4>
+          <div class="empty">Phần Listening của bộ Cambridge Authentic chưa có file trong thư mục GitHub hiện tại. Khi cô/thầy thêm file, chỉ cần bổ sung liên kết vào trang này.</div>
+        </div>
+      </div>
+    </section>
+
+    <div class="note">
+      <strong>Lưu ý cho học sinh:</strong> Nên dùng Chrome/Edge phiên bản mới. Với bài Listening, hãy kiểm tra âm lượng trước khi bắt đầu và hạn chế tải lại trang trong lúc đang làm bài.
+    </div>
+  </main>
+
+  <footer>
+    Hoàn Cầu English · Cambridge B1 Preliminary (PET) Practice Portal
+  </footer>
+</body>
+</html>
